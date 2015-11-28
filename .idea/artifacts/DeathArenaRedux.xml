@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DeathArenaRedux">
+    <output-path>$PROJECT_DIR$/../Minecraft Server/plugins</output-path>
+    <root id="archive" name="DeathArenaRedux.jar">
+      <element id="module-output" name="Death Arena Redux" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/plugin.yml" />
+    </root>
+  </artifact>
+</component>
