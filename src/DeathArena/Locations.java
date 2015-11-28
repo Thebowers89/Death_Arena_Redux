@@ -22,7 +22,7 @@ public class Locations {
     }
 
     public static Location tankLocation() {
-        World w = Bukkit.getServer().getWorld(plugin.getConfig().getString("Class.Tank.Location.X"));
+        World w = Bukkit.getServer().getWorld(plugin.getConfig().getString("Class.Tank.Location.World"));
         Double x = plugin.getConfig().getDouble("Class.Tank.Location.X");
         Double y = plugin.getConfig().getDouble("Class.Tank.Location.Y");
         Double z = plugin.getConfig().getDouble("Class.Tank.Location.Z");
@@ -50,4 +50,15 @@ public class Locations {
         Location alchemistLocation = new Location(w, x, y, z);
         return alchemistLocation;
     }
+
+    public static Location lobbyLocation() {
+        World w = Bukkit.getServer().getWorld(plugin.getConfig().getString("Lobby.World"));
+        Double x = plugin.getConfig().getDouble("Lobby.X");
+        Double y = plugin.getConfig().getDouble("Lobby.Y");
+        Double z = plugin.getConfig().getDouble("Lobby.Z");
+
+        Location lobbyLocation = new Location(w, x, y, z);
+        return lobbyLocation;
+    }
+
 }

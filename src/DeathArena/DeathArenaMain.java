@@ -14,7 +14,7 @@ public class DeathArenaMain extends JavaPlugin {
     public void onEnable() {
         registerCommands();
         registerEvents();
-        //new Locations(this);
+        new Locations(this);
     }
 
     @Override

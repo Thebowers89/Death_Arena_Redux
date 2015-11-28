@@ -1,9 +1,6 @@
 package DeathArena.EventHandlers;
 
-import DeathArena.BattleStarter;
-import DeathArena.DeathArenaMain;
-import DeathArena.Inventories;
-import DeathArena.ItemStacks;
+import DeathArena.*;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -35,15 +32,20 @@ public class SelectionListener implements Listener {
                         inventory.setItem(3, ItemStacks.rangerInfo());
                         inventory.setItem(2, ItemStacks.tankSelect());
                         BattleStarter.players.put(player.getUniqueId(), "Tank");
+                        BattleStarter.tanks.add(player);
+                        BattleStarter.rangers.remove(player);
                         player.sendMessage("You have chosen Tank");
                     } else if (inventory.getItem(4).equals(ItemStacks.alchemistSelect())) {
                         inventory.setItem(4, ItemStacks.alchemistInfo());
                         inventory.setItem(2, ItemStacks.tankSelect());
                         BattleStarter.players.put(player.getUniqueId(), "Tank");
+                        BattleStarter.tanks.add(player);
+                        BattleStarter.alchemists.remove(player);
                         player.sendMessage("You have chosen Tank");
                     } else {
                         inventory.setItem(2, ItemStacks.tankSelect());
                         BattleStarter.players.put(player.getUniqueId(), "Tank");
+                        BattleStarter.tanks.add(player);
                         player.sendMessage("You have chosen Tank");
                     }
                 }
@@ -52,15 +54,20 @@ public class SelectionListener implements Listener {
                         inventory.setItem(2, ItemStacks.tankInfo());
                         inventory.setItem(3, ItemStacks.rangerSelect());
                         BattleStarter.players.put(player.getUniqueId(), "Ranger");
+                        BattleStarter.tanks.remove(player);
+                        BattleStarter.rangers.add(player);
                         player.sendMessage("You have chosen Ranger");
                     } else if (inventory.getItem(4).equals(ItemStacks.alchemistSelect())) {
                         inventory.setItem(4, ItemStacks.alchemistInfo());
                         inventory.setItem(3, ItemStacks.rangerSelect());
                         BattleStarter.players.put(player.getUniqueId(), "Ranger");
+                        BattleStarter.rangers.add(player);
+                        BattleStarter.alchemists.remove(player);
                         player.sendMessage("You have chosen Ranger");
                     } else {
                         inventory.setItem(3, ItemStacks.rangerSelect());
                         BattleStarter.players.put(player.getUniqueId(), "Ranger");
+                        BattleStarter.rangers.add(player);
                         player.sendMessage("You have chosen Ranger");
                     }
                 }
@@ -69,15 +76,21 @@ public class SelectionListener implements Listener {
                         inventory.setItem(2, ItemStacks.tankInfo());
                         inventory.setItem(4, ItemStacks.alchemistSelect());
                         BattleStarter.players.put(player.getUniqueId(), "Alchemist");
+                        BattleStarter.alchemists.add(player);
+                        BattleStarter.tanks.remove(player);
                         player.sendMessage("You have chosen Alchemist");
                     } else if (inventory.getItem(3).equals(ItemStacks.rangerSelect())) {
                         inventory.setItem(3, ItemStacks.rangerInfo());
                         inventory.setItem(4, ItemStacks.alchemistSelect());
                         BattleStarter.players.put(player.getUniqueId(), "Alchemist");
+                        BattleStarter.alchemists.add(player);
+                        BattleStarter.rangers.remove(player);
                         player.sendMessage("You have chosen Alchemist");
                     } else {
                         inventory.setItem(4, ItemStacks.alchemistSelect());
                         BattleStarter.players.put(player.getUniqueId(), "Alchemist");
+
+                        BattleStarter.alchemists.add(player);
                         player.sendMessage("You have chosen Alchemist");
                     }
                 }
@@ -91,29 +104,17 @@ public class SelectionListener implements Listener {
                 }
                 if (item.equals(ItemStacks.confirmGlass())) {
                     if (inventory.getItem(2).equals(ItemStacks.tankSelect())) {
-                        World w = Bukkit.getServer().getWorld(plugin.getConfig().getString("Lobby.World"));
-                        Double x = plugin.getConfig().getDouble("Lobby.X");
-                        Double y = plugin.getConfig().getDouble("Lobby.Y");
-                        Double z = plugin.getConfig().getDouble("Lobby.Z");
-                        player.teleport(new Location(w, x, y, z));
+                        player.teleport(Locations.lobbyLocation());
                         pInv.clear();
                         pInv.setItem(0, ItemStacks.notReadyWool());
                         pInv.setItem(1, ItemStacks.tankPack());
                     } else if (inventory.getItem(3).equals(ItemStacks.rangerSelect())) {
-                        World w = Bukkit.getServer().getWorld(plugin.getConfig().getString("Lobby.World"));
-                        Double x = plugin.getConfig().getDouble("Lobby.X");
-                        Double y = plugin.getConfig().getDouble("Lobby.Y");
-                        Double z = plugin.getConfig().getDouble("Lobby.Z");
-                        player.teleport(new Location(w, x, y, z));
+                        player.teleport(Locations.lobbyLocation());
                         pInv.clear();
                         pInv.setItem(0, ItemStacks.notReadyWool());
                         pInv.setItem(1, ItemStacks.rangerPack());
                     } else if (inventory.getItem(4).equals(ItemStacks.alchemistSelect())) {
-                        World w = Bukkit.getServer().getWorld(plugin.getConfig().getString("Lobby.World"));
-                        Double x = plugin.getConfig().getDouble("Lobby.X");
-                        Double y = plugin.getConfig().getDouble("Lobby.Y");
-                        Double z = plugin.getConfig().getDouble("Lobby.Z");
-                        player.teleport(new Location(w, x, y, z));
+                        player.teleport(Locations.lobbyLocation());
                         pInv.clear();
                         pInv.setItem(0, ItemStacks.notReadyWool());
                         pInv.setItem(1, ItemStacks.alchemistPack());

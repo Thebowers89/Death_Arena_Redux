@@ -32,6 +32,10 @@ public class BattleStarter {
             player.teleport(Locations.rangerLocation());
         }
         rangers.clear();
+        for (Player player : alchemists) {
+            player.teleport(Locations.alchemistLocation());
+        }
+        alchemists.clear();
     }
 
 }
