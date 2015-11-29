@@ -9,6 +9,11 @@ import java.util.UUID;
 
 public class BattleStarter {
 
+    static DeathArenaMain plugin;
+    public BattleStarter(DeathArenaMain instance) {
+        plugin = instance;
+    }
+
     public static HashMap<UUID, String> players = new HashMap<UUID, String>();
 
     public static ArrayList<Player> tanks = new ArrayList<Player>();
@@ -17,7 +22,6 @@ public class BattleStarter {
 
     public static void onJoin() {
         if (players.size() == 3) {
-            Bukkit.getServer().broadcastMessage("Death Arena is now Starting.");
             players.clear();
             startBattle();
         }
@@ -36,6 +40,7 @@ public class BattleStarter {
             player.teleport(Locations.alchemistLocation());
         }
         alchemists.clear();
+        Bukkit.broadcastMessage("Death Arena is now starting!");
     }
 
 }

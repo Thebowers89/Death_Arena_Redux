@@ -70,6 +70,7 @@ public class PreparationListener implements Listener {
         ItemStack item = event.getItemDrop().getItemStack();
         Player player = event.getPlayer();
         if (item.equals(ItemStacks.notReadyWool())
+                || item.equals(ItemStacks.readyWool())
                 || item.equals(ItemStacks.tankPack())
                 || item.equals(ItemStacks.rangerPack())
                 || item.equals(ItemStacks.alchemistPack())) {

@@ -89,6 +89,11 @@ public class DeathArenaCommand implements CommandExecutor {
                             sender.sendMessage(ChatColor.GREEN + "Please choose your desired class.");
                             return true;
                         }
+                        if (args[0].equalsIgnoreCase("devbook")) {
+                            Inventory pi = player.getInventory();
+                            pi.addItem(ItemStacks.devBook());
+                            return true;
+                        }
                         sender.sendMessage(ChatColor.DARK_RED + "Invalid Parameters.");
                         return true;
                     }

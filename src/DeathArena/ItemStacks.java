@@ -239,4 +239,12 @@ public class ItemStacks {
         return chest;
     }
 
+    public static ItemStack devBook() {
+        ItemStack book = new ItemStack(Material.BOOK);
+        ItemMeta bookMeta = book.getItemMeta();
+        bookMeta.setDisplayName(ChatColor.AQUA + "Dev Book");
+        book.setItemMeta(bookMeta);
+        return book;
+    }
+
 }

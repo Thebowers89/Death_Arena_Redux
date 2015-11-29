@@ -1,10 +1,7 @@
 package DeathArena;
 
 import DeathArena.Commands.DeathArenaCommand;
-import DeathArena.EventHandlers.PreparationListener;
-import DeathArena.EventHandlers.RosterClickCancelListener;
-import DeathArena.EventHandlers.RosterListener;
-import DeathArena.EventHandlers.SelectionListener;
+import DeathArena.EventHandlers.*;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -15,6 +12,7 @@ public class DeathArenaMain extends JavaPlugin {
         registerCommands();
         registerEvents();
         new Locations(this);
+        new BattleStarter(this);
     }
 
     @Override
@@ -32,5 +30,6 @@ public class DeathArenaMain extends JavaPlugin {
         pm.registerEvents(new RosterClickCancelListener(), this);
         pm.registerEvents(new SelectionListener(this), this);
         pm.registerEvents(new PreparationListener(), this);
+        pm.registerEvents(new DevBookListener(), this);
     }
 }
