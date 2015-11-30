@@ -7,6 +7,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
+import java.util.ArrayList;
+
 public class ItemStacks {
 
     public static ItemStack roster() {
@@ -28,7 +30,7 @@ public class ItemStacks {
     public static ItemStack tankInfo() {
         ItemStack sword = new ItemStack(Material.DIAMOND_SWORD);
         ItemMeta msword = sword.getItemMeta();
-        msword.setDisplayName(ChatColor.RED + "Tank Info");
+        msword.setDisplayName(ChatColor.RED + "Tank Class");
         sword.setItemMeta(msword);
         return sword;
     }
@@ -44,7 +46,7 @@ public class ItemStacks {
     public static ItemStack rangerInfo() {
         ItemStack bow = new ItemStack(Material.BOW);
         ItemMeta bowMeta = bow.getItemMeta();
-        bowMeta.setDisplayName(ChatColor.GREEN + "Ranger info");
+        bowMeta.setDisplayName(ChatColor.GREEN + "Ranger Class");
         bow.setItemMeta(bowMeta);
         return bow;
     }
@@ -60,7 +62,7 @@ public class ItemStacks {
     public static ItemStack alchemistInfo() {
         ItemStack waterBottle = new ItemStack(Material.POTION, 1, (short) 0);
         ItemMeta wbm = waterBottle.getItemMeta();
-        wbm.setDisplayName(ChatColor.BLUE + "Alchemist Info");
+        wbm.setDisplayName(ChatColor.BLUE + "Alchemist Class");
         waterBottle.setItemMeta(wbm);
         return waterBottle;
     }
@@ -215,30 +217,6 @@ public class ItemStacks {
         return wool;
     }
 
-    public static ItemStack tankPack() {
-        ItemStack chest = new ItemStack(Material.CHEST);
-        ItemMeta chestMeta = chest.getItemMeta();
-        chestMeta.setDisplayName(ChatColor.RED + "Tank Pack");
-        chest.setItemMeta(chestMeta);
-        return chest;
-    }
-
-    public static ItemStack rangerPack() {
-        ItemStack chest = new ItemStack(Material.CHEST);
-        ItemMeta chestMeta = chest.getItemMeta();
-        chestMeta.setDisplayName(ChatColor.GREEN + "Ranger Pack");
-        chest.setItemMeta(chestMeta);
-        return chest;
-    }
-
-    public static ItemStack alchemistPack() {
-        ItemStack chest = new ItemStack(Material.CHEST);
-        ItemMeta chestMeta = chest.getItemMeta();
-        chestMeta.setDisplayName(ChatColor.BLUE + "Alchemist Pack");
-        chest.setItemMeta(chestMeta);
-        return chest;
-    }
-
     public static ItemStack devBook() {
         ItemStack book = new ItemStack(Material.BOOK);
         ItemMeta bookMeta = book.getItemMeta();
@@ -246,5 +224,6 @@ public class ItemStacks {
         book.setItemMeta(bookMeta);
         return book;
     }
+
 
 }

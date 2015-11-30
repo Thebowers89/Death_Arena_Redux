@@ -31,5 +31,6 @@ public class DeathArenaMain extends JavaPlugin {
         pm.registerEvents(new SelectionListener(this), this);
         pm.registerEvents(new PreparationListener(), this);
         pm.registerEvents(new DevBookListener(), this);
+        pm.registerEvents(new BattleManager(this), this);
     }
 }

@@ -27,6 +27,8 @@ public class DevBookListener implements Listener {
             if (player.getItemInHand().equals(ItemStacks.devBook())) {
                 player.openInventory(DevBookInventories.devBook());
                 event.setCancelled(true);
+            } else {
+                return;
             }
         }
     }
@@ -79,7 +81,9 @@ public class DevBookListener implements Listener {
                     BattleStarter.alchemists.clear();
                     BattleStarter.rangers.clear();
                     BattleStarter.tanks.clear();
-                    player.sendMessage("All class lists have been cleared.");
+                    BattleStarter.players.clear();
+                    BattleManager.allPlayers.clear();
+                    player.sendMessage("All lists have been cleared.");
                 }
                 if (item.equals(DevBookItems.clearCounterBook())) {
                     BattleStarter.players.clear();

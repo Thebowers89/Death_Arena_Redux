@@ -64,4 +64,49 @@ public class Inventories {
         return classSelection;
     }
 
+    public static Inventory tankInventory() {
+        Inventory tankInventory = Bukkit.getServer().createInventory(null, 36, "");
+        tankInventory.setItem(0, ItemStacks.tankSword());
+        return tankInventory;
+    }
+
+    public static Inventory rangerInventory() {
+        Inventory rangerInventory = Bukkit.getServer().createInventory(null, 36, "");
+        rangerInventory.setItem(0, ItemStacks.rangerBow());
+        rangerInventory.setItem(10, new ItemStack(Material.ARROW));
+        return rangerInventory;
+    }
+
+    public static Inventory alchemistInventory() {
+        Inventory pi = Bukkit.getServer().createInventory(null, 36, "");
+        ItemStack feye = new ItemStack(Material.FERMENTED_SPIDER_EYE, 8);
+        ItemStack bottle = new ItemStack(Material.GLASS_BOTTLE, 24);
+        ItemStack eye = new ItemStack(Material.SPIDER_EYE, 4);
+        ItemStack melon = new ItemStack(Material.SPECKLED_MELON, 8);
+        ItemStack feather = new ItemStack(Material.SUGAR, 4);
+        ItemStack cream = new ItemStack(Material.MAGMA_CREAM, 2);
+        ItemStack rstone = new ItemStack(Material.REDSTONE, 24);
+        ItemStack powder = new ItemStack(Material.SULPHUR, 24);
+        ItemStack gcarrot = new ItemStack(Material.GOLDEN_CARROT, 1);
+        ItemStack tear = new ItemStack(Material.GHAST_TEAR, 4);
+        ItemStack bpowder = new ItemStack(Material.BLAZE_POWDER, 2);
+        ItemStack gStone = new ItemStack(Material.GLOWSTONE_DUST, 24);
+        ItemStack nWart = new ItemStack(Material.NETHER_STALK, 8);
+
+        pi.setItem(9, feye);
+        pi.setItem(10, bottle);
+        pi.setItem(11, eye);
+        pi.setItem(12, melon);
+        pi.setItem(13, feather);
+        pi.setItem(14, cream);
+        pi.setItem(15, rstone);
+        pi.setItem(16, powder);
+        pi.setItem(17, gcarrot);
+        pi.setItem(18, tear);
+        pi.setItem(19, bpowder);
+        pi.setItem(20, gStone);
+        pi.setItem(21, nWart);
+        return pi;
+    }
+
 }

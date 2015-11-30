@@ -26,8 +26,10 @@ public class Locations {
         Double x = plugin.getConfig().getDouble("Class.Tank.Location.X");
         Double y = plugin.getConfig().getDouble("Class.Tank.Location.Y");
         Double z = plugin.getConfig().getDouble("Class.Tank.Location.Z");
+        Float yaw = (Float) plugin.getConfig().get("Class.Tank.Location.Yaw");
+        Float pitch = (Float) plugin.getConfig().get("Class.Tank.Location.Pitch");
 
-        Location tankLocation = new Location(w, x, y, z);
+        Location tankLocation = new Location(w, x, y, z, yaw, pitch);
         return tankLocation;
     }
 
@@ -36,8 +38,10 @@ public class Locations {
         Double x = plugin.getConfig().getDouble("Class.Ranger.Location.X");
         Double y = plugin.getConfig().getDouble("Class.Ranger.Location.Y");
         Double z = plugin.getConfig().getDouble("Class.Ranger.Location.Z");
+        Float yaw = (Float) plugin.getConfig().get("Class.Ranger.Location.Yaw");
+        Float pitch = (Float) plugin.getConfig().get("Class.Ranger.Location.Pitch");
 
-        Location rangerLocation = new Location(w, x, y, z);
+        Location rangerLocation = new Location(w, x, y, z, yaw, pitch);
         return rangerLocation;
     }
 
@@ -46,8 +50,10 @@ public class Locations {
         Double x = plugin.getConfig().getDouble("Class.Alchemist.Location.X");
         Double y = plugin.getConfig().getDouble("Class.Alchemist.Location.Y");
         Double z = plugin.getConfig().getDouble("Class.Alchemist.Location.Z");
+        Float yaw = (Float) plugin.getConfig().get("Class.Alchemist.Location.Yaw");
+        Float pitch = (Float) plugin.getConfig().get("Class.Alchemist.Location.Pitch");
 
-        Location alchemistLocation = new Location(w, x, y, z);
+        Location alchemistLocation = new Location(w, x, y, z, yaw, pitch);;
         return alchemistLocation;
     }
 
@@ -56,8 +62,10 @@ public class Locations {
         Double x = plugin.getConfig().getDouble("Lobby.X");
         Double y = plugin.getConfig().getDouble("Lobby.Y");
         Double z = plugin.getConfig().getDouble("Lobby.Z");
+        Float yaw = (Float) plugin.getConfig().get("Lobby.Yaw");
+        Float pitch = (Float) plugin.getConfig().get("Lobby.Pitch");
 
-        Location lobbyLocation = new Location(w, x, y, z);
+        Location lobbyLocation = new Location(w, x, y, z, yaw, pitch);
         return lobbyLocation;
     }
 

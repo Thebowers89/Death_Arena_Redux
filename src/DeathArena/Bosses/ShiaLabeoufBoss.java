@@ -24,8 +24,8 @@ public class ShiaLabeoufBoss {
             zombie.setCustomName(ChatColor.RED + "Shia Labeouf");
         }
         zombie.setCustomNameVisible(true);
-        zombie.setMaxHealth(250.0);
-        zombie.setHealth(250.0);
+        zombie.setMaxHealth(20.0);
+        zombie.setHealth(20.0);
         zombie.getEquipment().setHelmet(ItemStacks.bHead());
         zombie.getEquipment().setHelmetDropChance(0.1f);
         zombie.getEquipment().setChestplate(ItemStacks.bChest());

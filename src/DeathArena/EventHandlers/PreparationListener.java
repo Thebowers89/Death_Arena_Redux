@@ -23,10 +23,7 @@ public class PreparationListener implements Listener {
         Player player = (Player) event.getWhoClicked();
 
         if (!(inventory == null)) {
-            if (item.equals(ItemStacks.notReadyWool())
-                    || item.equals(ItemStacks.tankPack())
-                    || item.equals(ItemStacks.rangerPack())
-                    || item.equals(ItemStacks.alchemistPack())) {
+            if (item.equals(ItemStacks.notReadyWool()) || item.equals(ItemStacks.readyWool())) {
                 event.setCancelled(true);
             }
         }
@@ -43,10 +40,7 @@ public class PreparationListener implements Listener {
                 event.setCancelled(true);
                 inventory.setItem(0, ItemStacks.readyWool());
                 BattleStarter.onJoin();
-            } else if (item.equals(ItemStacks.tankPack())
-                    || item.equals(ItemStacks.rangerPack())
-                    || item.equals(ItemStacks.alchemistPack())
-                    || item.equals(ItemStacks.readyWool())) {
+            } else if (item.equals(ItemStacks.readyWool())) {
                 event.setCancelled(true);
             }
         }
@@ -55,12 +49,7 @@ public class PreparationListener implements Listener {
     @EventHandler
     public void onPlaceEvent(BlockPlaceEvent event) {
         Block block = event.getBlockPlaced();
-        if (block.equals(ItemStacks.notReadyWool())
-                || block.equals(ItemStacks.readyWool())
-                || block.equals(ItemStacks.tankPack())
-                || block.equals(ItemStacks.rangerPack())
-                || block.equals(ItemStacks.alchemistPack())
-                || block.equals(ItemStacks.readyWool())) {
+        if (block.equals(ItemStacks.notReadyWool()) || block.equals(ItemStacks.readyWool())) {
             event.setCancelled(true);
         }
     }
@@ -69,11 +58,7 @@ public class PreparationListener implements Listener {
     public void onDropEvent(PlayerDropItemEvent event) {
         ItemStack item = event.getItemDrop().getItemStack();
         Player player = event.getPlayer();
-        if (item.equals(ItemStacks.notReadyWool())
-                || item.equals(ItemStacks.readyWool())
-                || item.equals(ItemStacks.tankPack())
-                || item.equals(ItemStacks.rangerPack())
-                || item.equals(ItemStacks.alchemistPack())) {
+        if (item.equals(ItemStacks.notReadyWool()) || item.equals(ItemStacks.readyWool())) {
             event.setCancelled(true);
         }
     }

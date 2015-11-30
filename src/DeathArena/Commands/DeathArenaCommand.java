@@ -43,6 +43,8 @@ public class DeathArenaCommand implements CommandExecutor {
                                     plugin.getConfig().set("Class.Tank.Location.Y", ploc.getY());
                                     plugin.getConfig().set("Class.Tank.Location.Z", ploc.getZ());
                                     plugin.getConfig().set("Class.Tank.Location.World", ploc.getWorld().getName());
+                                    plugin.getConfig().set("Class.Tank.Location.Pitch", ploc.getPitch());
+                                    plugin.getConfig().set("Class.Tank.Location.Yaw", ploc.getYaw());
 
                                     sender.sendMessage(ChatColor.RED + "Tank Spawn Set.");
                                     plugin.saveConfig();
@@ -53,6 +55,8 @@ public class DeathArenaCommand implements CommandExecutor {
                                     plugin.getConfig().set("Class.Ranger.Location.Y", ploc.getY());
                                     plugin.getConfig().set("Class.Ranger.Location.Z", ploc.getZ());
                                     plugin.getConfig().set("Class.Ranger.Location.World", ploc.getWorld().getName());
+                                    plugin.getConfig().set("Class.Ranger.Location.Pitch", ploc.getPitch());
+                                    plugin.getConfig().set("Class.Ranger.Location.Yaw", ploc.getYaw());
 
                                     sender.sendMessage(ChatColor.GREEN + "Ranger Spawn Set.");
                                     plugin.saveConfig();
@@ -63,6 +67,8 @@ public class DeathArenaCommand implements CommandExecutor {
                                     plugin.getConfig().set("Class.Alchemist.Location.Y", ploc.getY());
                                     plugin.getConfig().set("Class.Alchemist.Location.Z", ploc.getZ());
                                     plugin.getConfig().set("Class.Alchemist.Location.World", ploc.getWorld().getName());
+                                    plugin.getConfig().set("Class.Alchemist.Location.Pitch", ploc.getPitch());
+                                    plugin.getConfig().set("Class.Alchemist.Location.Yaw", ploc.getYaw());
 
                                     sender.sendMessage(ChatColor.BLUE + "Alchemist Spawn Set.");
                                     plugin.saveConfig();
@@ -73,6 +79,8 @@ public class DeathArenaCommand implements CommandExecutor {
                                     plugin.getConfig().set("Lobby.Y", ploc.getY());
                                     plugin.getConfig().set("Lobby.Z", ploc.getZ());
                                     plugin.getConfig().set("Lobby.World", ploc.getWorld().getName());
+                                    plugin.getConfig().set("Lobby.Pitch", ploc.getPitch());
+                                    plugin.getConfig().set("Lobby.Yaw", ploc.getYaw());
 
                                     sender.sendMessage("Lobby Set.");
                                     plugin.saveConfig();

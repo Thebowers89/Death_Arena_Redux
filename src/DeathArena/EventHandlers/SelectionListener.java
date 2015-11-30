@@ -103,22 +103,9 @@ public class SelectionListener implements Listener {
                     player.openInventory(Inventories.roster());
                 }
                 if (item.equals(ItemStacks.confirmGlass())) {
-                    if (inventory.getItem(2).equals(ItemStacks.tankSelect())) {
-                        player.teleport(Locations.lobbyLocation());
-                        pInv.clear();
-                        pInv.setItem(0, ItemStacks.notReadyWool());
-                        pInv.setItem(1, ItemStacks.tankPack());
-                    } else if (inventory.getItem(3).equals(ItemStacks.rangerSelect())) {
-                        player.teleport(Locations.lobbyLocation());
-                        pInv.clear();
-                        pInv.setItem(0, ItemStacks.notReadyWool());
-                        pInv.setItem(1, ItemStacks.rangerPack());
-                    } else if (inventory.getItem(4).equals(ItemStacks.alchemistSelect())) {
-                        player.teleport(Locations.lobbyLocation());
-                        pInv.clear();
-                        pInv.setItem(0, ItemStacks.notReadyWool());
-                        pInv.setItem(1, ItemStacks.alchemistPack());
-                    }
+                    player.teleport(Locations.lobbyLocation());
+                    pInv.clear();
+                    pInv.setItem(0, ItemStacks.notReadyWool());
                 }
             }
         }
